@@ -1,5 +1,8 @@
 .dropdown {
     display: flex;
     background-color: aqua;
-    
+}
+
+.dropdown-list{
+    transition: 2s ease-in;
 }

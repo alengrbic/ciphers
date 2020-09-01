@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Input from '../Input'
 import Output from '../Output'
 
 export default function Vigenere() {
@@ -51,21 +52,22 @@ export default function Vigenere() {
         
     })
 
+        //function to take in the value from the input
+        const handleInput = (val) => {
+            setInput([...val])
+        }
+
     
 
     return (
         <div>
             <h1>Vigenere Cipher</h1>
-            <p>Enter text to encode:</p>
-            <input onChange={(e) => {
-                setInput([...e.target.value])
-            }} type="text" name="" id=""/>
+            <Input handleInput={handleInput}/>
             <p>Key:</p>
             <input onChange={(e) => {
                 setCipherKey(e.target.value)
             }} onBlur={keyText} placeholder={cipherKey} type="text" name="" id=""/>
-            <h1>Plaintext:</h1>
-            <h2>{input}</h2>
+            
 
             <Output val={toRender} />
         </div>

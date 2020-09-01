@@ -1,19 +1,28 @@
 import React, {useState} from 'react';
-import Dropdown from './comps/Dropdown'
+import Card from './comps/Card'
 import Caesar from './comps/ciphers/Caesar'
 import Vigenere from './comps/ciphers/Vigenere'
 import AlphabeticalSubstitution from './comps/ciphers/AlphabeticalSubstitution'
 import './App.css';
 
 function App() {
-  const [dropdownProps, setDropdownProps] = useState(['Caesar Cipher', 'Vigenere', 'Alphabetical Substitution'])
+  const [cardProps, setCardProps] = useState([{
+    name: 'Caesar Cipher',
+    description: 'Shifts letter by 3 spots (a -> d)'
+  },{
+    name: 'Vigenere Cipher',
+    description: 'Shifts letter by 3 spots (a -> d)'
+  },{
+    name: 'Alphabetical Substitution',
+    description: 'Shifts letter by 3 spots (a -> d)'
+  }])
   const [display, setDisplay] = useState()
 
   const goBack = () => {
     setDisplay('Select Your Cipher')
   }
 
-  const handleDataFromChild = (val) => {
+  const clickHandler= (val) => {
     setDisplay(val)
   }
 
@@ -21,20 +30,20 @@ function App() {
     if(display === 'Caesar Cipher'){
       return <Caesar/>
     }
-    else if(display === 'Vigenere'){
+    else if(display === 'Vigenere Cipher'){
       return <Vigenere/>
     }
     else if(display === 'Alphabetical Substitution'){
       return <AlphabeticalSubstitution/>
     }
     else{
-      return (
-        <div>
+        return (
+          <div>
+            {cardProps.map(el => <Card clickHandler={clickHandler} name={el.name} description={el.description}/>)}
+          </div>
           
-          <Dropdown handleDisplay={handleDataFromChild} title={dropdownProps}/>
-          
-        </div>
-      )
+        )
+      
     }
   }
 
@@ -42,6 +51,9 @@ function App() {
     <div className="App">
      <button onClick={goBack}>Back</button>
       {toRender()}
+      <div>
+        
+      </div>
     </div>
   );
 }

@@ -4,4 +4,4 @@
 
 ### implement key for caesar cipher
 ### implement decoders
-### implement styling - dropdown for ciphers instead of a buttons
+### implement styling - cards to choose a cipher, add input component

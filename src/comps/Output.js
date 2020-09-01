@@ -4,7 +4,7 @@ export default function Output(props) {
     return (
         <div>
             <h1>Encoded:</h1>
-            <h2>{props.val}</h2>
+    <textarea value={props.val.join("")} name="" id="" cols="30" rows="10"></textarea>
         </div>
     )
 }
