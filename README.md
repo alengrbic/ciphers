@@ -1,7 +1,5 @@
 # Things to add
 ## Implement new ciphers
-### Transposition cipher, Affine Cipher
-
 ### implement key for caesar cipher
-### implement decoders
-### implement styling - cards to choose a cipher, add input component
+### implement decoders - two way connection between encoder and decoder text area
+### improve styling
