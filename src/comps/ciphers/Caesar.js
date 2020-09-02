@@ -7,6 +7,12 @@ export default function Caesar() {
     const [input, setInput] = useState([])
     
     const ENGLISH = "abcdefghijklmnopqrstuvwxyz".split("");
+
+    //keep track of the key
+
+    //add second alphabet that will be used as a map to the plain text
+
+    //increment input value by key index in the map alphabet
     
     const toRender = input.map(el => {
         if(el === " "){
@@ -38,11 +44,20 @@ export default function Caesar() {
     return (
         <div>
             <h1>Caesar Cipher</h1>
+            <div className="row justify-content-md-center mt-5 mr-0 ml-0">
+                <div className="col-sm">
+                <Input handleInput={handleInput}/>
+                </div>
+                <div className="col-sm">
+                <Output val={toRender} />
+                </div>
+                
+            </div>
             
-            <Input handleInput={handleInput}/>
+            
             
 
-            <Output val={toRender} />
+            
         </div>
     )
 }

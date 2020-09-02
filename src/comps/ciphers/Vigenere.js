@@ -62,14 +62,26 @@ export default function Vigenere() {
     return (
         <div>
             <h1>Vigenere Cipher</h1>
-            <Input handleInput={handleInput}/>
-            <p>Key:</p>
+            <div className="row justify-content-md-center mt-5 mr-0 ml-0">
+                <div className="col-sm">
+                <Input handleInput={handleInput}/>
+                </div>
+                <div className="col-sm">
+                <p>Key:</p>
             <input onChange={(e) => {
                 setCipherKey(e.target.value)
             }} onBlur={keyText} placeholder={cipherKey} type="text" name="" id=""/>
+                </div>
+                <div className="col-sm">
+                <Output val={toRender} />
+                </div>
+            
             
 
-            <Output val={toRender} />
+           
+
+            </div>
+            
         </div>
     )
 }

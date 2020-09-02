@@ -30,13 +30,27 @@ export default function AlphabeticalSubstitution() {
     return (
         <div>
             <h1>Alphabetical Substitution</h1>
-            <p>Plaintext Alphabet</p>
-            <input placeholder={plaintextAlphabet.join("")} type="text" name="" id=""/>
-            <p>Ciphertext Alphabet</p>
-            <input placeholder={cipherAlphabet.join("")} type="text" name="" id=""/>
-            <p>Enter text to encode:</p>
-            <Input handleInput={handleInput}/>
-            <Output val={toRender} />
+            <div className="row justify-content-md-center mt-5 mr-0 ml-0">
+                <div className="col-sm">
+                <Input handleInput={handleInput}/>
+                </div>
+                <div className="col-sm">
+                <p>Plaintext Alphabet</p>
+                <input placeholder={plaintextAlphabet.join("")} type="text" name="" id=""/>
+            
+                <p className="mt-3">Ciphertext Alphabet</p>
+                <input placeholder={cipherAlphabet.join("")} type="text" name="" id=""/>
+                    
+                </div>
+                <div className="col-sm">
+                <Output val={toRender} />
+                </div>
+
+            </div>
+            
+            
+            
+           
         </div>
     )
 }
